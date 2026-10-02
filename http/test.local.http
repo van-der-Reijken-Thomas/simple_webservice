@@ -1,0 +1,18 @@
+@baseUrl = http://localhost:7071/api
+
+### Get all coffee transactions
+GET {{baseUrl}}/transactions
+Accept: application/json
+
+### Hello World
+GET {{baseUrl}}/HelloWorldTrigger
+
+### Calculator - plus
+POST {{baseUrl}}/calculator
+Content-Type: application/json
+
+{
+  "a": 3,
+  "b": 4,
+  "operator": "+"
+}

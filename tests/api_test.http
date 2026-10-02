@@ -1,5 +1,7 @@
-# Local: http://localhost:7071/api
-@baseUrl = https://w2gvd-dgarfpd2c3h0aebc.francecentral-01.azurewebsites.net/api
+@baseUrl = http://localhost:7071/api
+
+### Get all coffee transactions
+GET {{baseUrl}}/transactions
 
 ### GET HelloWorldTrigger
 GET {{baseUrl}}/HelloWorldTrigger
