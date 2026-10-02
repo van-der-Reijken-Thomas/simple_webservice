@@ -1,0 +1,10 @@
+### GET HelloWorldTrigger
+GET http://localhost:7071/api/HelloWorldTrigger
+
+### POST HelloWorldTrigger
+POST http://localhost:7071/api/HelloWorldTrigger
+Content-Type: application/json
+
+{
+  "message": "Hello from the REST Client"
+}
