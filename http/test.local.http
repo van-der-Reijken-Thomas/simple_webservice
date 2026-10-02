@@ -4,6 +4,34 @@
 GET {{baseUrl}}/transactions
 Accept: application/json
 
+### Get every coffee name once
+GET {{baseUrl}}/coffees
+Accept: application/json
+
+### Get transaction count
+GET {{baseUrl}}/transactions/count
+Accept: application/json
+
+### Create a transaction
+POST {{baseUrl}}/transactions
+Content-Type: application/json
+
+{
+  "dateTime": "2026-10-02T12:30:00",
+  "cashType": "card",
+  "card": "ANON-LOCAL-TEST-0001",
+  "money": 3.50,
+  "coffeeName": "Latte"
+}
+
+### Create transaction with missing fields - 400 Bad Request
+POST {{baseUrl}}/transactions
+Content-Type: application/json
+
+{
+  "coffeeName": "Latte"
+}
+
 ### Hello World
 GET {{baseUrl}}/HelloWorldTrigger
 

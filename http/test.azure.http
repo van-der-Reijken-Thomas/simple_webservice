@@ -4,5 +4,33 @@
 GET {{baseUrl}}/transactions
 Accept: application/json
 
+### Get every coffee name once from Azure
+GET {{baseUrl}}/coffees
+Accept: application/json
+
+### Get transaction count from Azure
+GET {{baseUrl}}/transactions/count
+Accept: application/json
+
+### Create a transaction in Azure
+POST {{baseUrl}}/transactions
+Content-Type: application/json
+
+{
+  "dateTime": "2026-10-02T12:35:00",
+  "cashType": "card",
+  "card": "ANON-AZURE-TEST-0001",
+  "money": 3.50,
+  "coffeeName": "Latte"
+}
+
+### Create transaction with missing fields - 400 Bad Request
+POST {{baseUrl}}/transactions
+Content-Type: application/json
+
+{
+  "coffeeName": "Latte"
+}
+
 ### Verify that the Function App is online
 GET {{baseUrl}}/HelloWorldTrigger

@@ -20,9 +20,21 @@ public class GetTransactionsTrigger
     public async Task<IActionResult> Run(
         [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "transactions")] HttpRequest req)
     {
-        _logger.LogInformation("Retrieving all coffee transactions.");
+        try
+        {
+            _logger.LogInformation("Retrieving all coffee transactions.");
 
-        var transactions = await _repository.GetTransactionsAsync();
-        return new OkObjectResult(transactions);
+            var transactions = await _repository.GetTransactionsAsync();
+            return new OkObjectResult(transactions);
+        }
+        catch (Exception exception)
+        {
+            _logger.LogError(exception, "Could not retrieve transactions.");
+
+            return new ObjectResult(new { error = "Could not retrieve transactions" })
+            {
+                StatusCode = StatusCodes.Status500InternalServerError
+            };
+        }
     }
 }
