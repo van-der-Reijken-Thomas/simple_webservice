@@ -1,10 +1,82 @@
+@baseUrl = http://localhost:7071/api
+
 ### GET HelloWorldTrigger
-GET http://localhost:7071/api/HelloWorldTrigger
+GET {{baseUrl}}/HelloWorldTrigger
 
 ### POST HelloWorldTrigger
-POST http://localhost:7071/api/HelloWorldTrigger
+POST {{baseUrl}}/HelloWorldTrigger
 Content-Type: application/json
 
 {
   "message": "Hello from the REST Client"
+}
+
+### Calculator POST - plus
+POST {{baseUrl}}/calculator
+Content-Type: application/json
+
+{
+  "a": 3,
+  "b": 4,
+  "operator": "+"
+}
+
+### Calculator POST - minus
+POST {{baseUrl}}/calculator
+Content-Type: application/json
+
+{
+  "a": 8,
+  "b": 2,
+  "operator": "minus"
+}
+
+### Calculator POST - multiply
+POST {{baseUrl}}/calculator
+Content-Type: application/json
+
+{
+  "a": 6,
+  "b": 7,
+  "operator": "multiply"
+}
+
+### Calculator POST - divide
+POST {{baseUrl}}/calculator
+Content-Type: application/json
+
+{
+  "a": 8,
+  "b": 2,
+  "operator": "div"
+}
+
+### Calculator POST - unknown operator (400 Bad Request)
+POST {{baseUrl}}/calculator
+Content-Type: application/json
+
+{
+  "a": 8,
+  "b": 2,
+  "operator": "modulo"
+}
+
+### Calculator POST - division by zero (400 Bad Request)
+POST {{baseUrl}}/calculator
+Content-Type: application/json
+
+{
+  "a": 8,
+  "b": 0,
+  "operator": "/"
+}
+
+### Calculator POST - invalid number (400 Bad Request)
+POST {{baseUrl}}/calculator
+Content-Type: application/json
+
+{
+  "a": "letter",
+  "b": 2,
+  "operator": "+"
 }
