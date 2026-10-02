@@ -1,0 +1,8 @@
+@baseUrl = https://w2gvd-dgarfpd2c3h0aebc.francecentral-01.azurewebsites.net/api
+
+### Get all coffee transactions from Azure
+GET {{baseUrl}}/transactions
+Accept: application/json
+
+### Verify that the Function App is online
+GET {{baseUrl}}/HelloWorldTrigger
