@@ -1,4 +1,5 @@
-@baseUrl = http://localhost:7071/api
+# Local: http://localhost:7071/api
+@baseUrl = https://w2gvd-dgarfpd2c3h0aebc.francecentral-01.azurewebsites.net/api
 
 ### GET HelloWorldTrigger
 GET {{baseUrl}}/HelloWorldTrigger
